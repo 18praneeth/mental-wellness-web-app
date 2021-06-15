@@ -1,0 +1,45 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% load crispy_forms_tags %} 
+
+{% block content %}
+
+
+  <main id="main" data-aos="fade-in">
+
+      <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Login</li>
+        </ol>
+        <h2>Login</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+        <!-- ======= Trainers Section ======= -->
+    <section id="trainers" class="trainers">
+      <div class="container" data-aos="fade-up">
+
+  <div class="col-lg-8 offset-lg-2 col-12">
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{form | crispy}}
+      <div class="d-grid gap-2 mt-4">
+        <button class="btn btn-info" type="submit">Login</button>
+      </div>
+    </form>
+
+
+      <div class="text-center">Forgot your password? <a href="{% url 'password_reset' %}">I can help</a></div>
+
+  </div>
+
+      </div>
+    </section><!-- End Trainers Section -->
+
+  </main><!-- End #main -->
+{% endblock content %}

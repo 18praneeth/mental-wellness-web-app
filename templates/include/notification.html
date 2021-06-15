@@ -1,0 +1,18 @@
+{% load static %}
+<script>
+
+{% if messages %}
+{% for message in messages %}
+  $.toast({
+    title: '{{message.tags}}',
+    subtitle: 'Just now',
+    content: '{{ message }}',
+    type: '{{message.tags}}',
+    delay: 10000
+  });
+{% endfor %}
+{% endif %}
+            
+              
+          
+</script>
